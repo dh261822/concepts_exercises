@@ -352,8 +352,26 @@ function namesAtLeastAge(people, minAge) {
 // 10 or more, that item gets 10% discount.
 //   cartTotal([{ item: "Pen", price: 2, quantity: 10 }]) -> 18
 // ---------------------------------------------------------------------
+
 function cartTotal(cart) {
+    let total = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+        let price = cart[i].price;
+        let quantity = cart[i].quantity;
+
+        let itemTotal = price * quantity;
+
+        if (quantity >= 10) {
+            itemTotal = itemTotal * 0.9;
+        }
+
+        total = total + itemTotal;
+    }
+
+    return total;
 }
+
 
 
 // ---------------------------------------------------------------------
