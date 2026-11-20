@@ -238,8 +238,32 @@ function pointsToGrade(points) {
 // word: 1 Excellent, 2 Good, 3 Satisfactory, 4 Sufficient,
 //       5 Insufficient
 // ---------------------------------------------------------------------
+
 function gradeReport(student) {
+    let grade = pointsToGrade(student.points);
+    let description = "";
+
+    switch (grade) {
+        case 1:
+            description = "Excellent";
+            break;
+        case 2:
+            description = "Good";
+            break;
+        case 3:
+            description = "Satisfactory";
+            break;
+        case 4:
+            description = "Sufficient";
+            break;
+        case 5:
+            description = "Insufficient";
+            break;
+    }
+
+    return student.name + ": " + grade + " (" + description + ")";
 }
+
 
 
 // ---------------------------------------------------------------------
