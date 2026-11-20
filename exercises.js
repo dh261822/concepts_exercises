@@ -330,8 +330,19 @@ function findOldest(people) {
 //   namesAtLeastAge([{ name: "Tom", age: 31 }, { name: "Eva", age: 12 }], 18)
 //     -> ["Tom"]
 // ---------------------------------------------------------------------
+
 function namesAtLeastAge(people, minAge) {
+    let names = [];
+
+    for (let i = 0; i < people.length; i++) {
+        if (people[i].age >= minAge) {
+            names.push(people[i].name);
+        }
+    }
+
+    return names;
 }
+
 
 
 // ---------------------------------------------------------------------
