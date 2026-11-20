@@ -305,7 +305,21 @@ function rockPaperScissors(choice1, choice2) {
 // Return the NAME of the oldest person. If two people have the same
 // highest age, return the one that comes first. Empty array gives "".
 // ---------------------------------------------------------------------
+
 function findOldest(people) {
+    if (people.length === 0) {
+        return "";
+    }
+
+    let oldest = people[0];
+
+    for (let i = 1; i < people.length; i++) {
+        if (people[i].age > oldest.age) {
+            oldest = people[i];
+        }
+    }
+
+    return oldest.name;
 }
 
 
