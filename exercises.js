@@ -78,25 +78,33 @@ function dayName(dayNumber) {
 //   countVowels("Hello World") -> 3
 // ---------------------------------------------------------------------
 
+
 function countVowels(text) {
     let count = 0;
 
     for (let i = 0; i < text.length; i++) {
-        let letter = text[i].toLowerCase();
-
-        if (
-            letter === "a" ||
-            letter === "e" ||
-            letter === "i" ||
-            letter === "o" ||
-            letter === "u"
-        ) {
-            count++;
+        switch (text[i]) {
+            case "a":
+            case "e":
+            case "i":
+            case "o":
+            case "u":
+            case "A":
+            case "E":
+            case "I":
+            case "O":
+            case "U":
+                count++;
+                break;
         }
     }
 
     return count;
 }
+
+
+   
+
 
 
 
@@ -431,32 +439,7 @@ function primesUpTo(n) {
 //   wordStatistics("the quick brown fox")
 //     -> { wordCount: 4, longestWord: "quick" }
 // ---------------------------------------------------------------------
-
 function wordStatistics(sentence) {
-    let wordCount = 0;
-    let longestWord = "";
-    let currentWord = "";
-
-    for (let i = 0; i <= sentence.length; i++) {
-        if (i === sentence.length || sentence[i] === " ") {
-            if (currentWord.length > 0) {
-                wordCount++;
-
-                if (currentWord.length > longestWord.length) {
-                    longestWord = currentWord;
-                }
-
-                currentWord = "";
-            }
-        } else {
-            currentWord = currentWord + sentence[i];
-        }
-    }
-
-    return {
-        wordCount: wordCount,
-        longestWord: longestWord
-    };
 }
 
 
