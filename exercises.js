@@ -213,8 +213,21 @@ function countWeekendDays(dayNumbers) {
 //   90-100 -> 1,  80-89 -> 2,  65-79 -> 3,  50-64 -> 4,  below 50 -> 5
 //   pointsToGrade(85) -> 2
 // ---------------------------------------------------------------------
+
 function pointsToGrade(points) {
+    if (points >= 90) {
+        return 1;
+    } else if (points >= 80) {
+        return 2;
+    } else if (points >= 65) {
+        return 3;
+    } else if (points >= 50) {
+        return 4;
+    } else {
+        return 5;
+    }
 }
+
 
 
 // ---------------------------------------------------------------------
